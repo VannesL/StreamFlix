@@ -29,8 +29,6 @@ function Home({match}) {
     const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=0bcbffad24fc8c3861fcf6e96088dd11&language=en-US&page=${pageNum}`);
     
     const movies = await data.json();
-    console.log(pageNum)
-    console.log(movies.results)
     setResults(movies.results);
   }
 

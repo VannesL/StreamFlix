@@ -37,10 +37,6 @@ function Movie({match}) {
         setCast(credit.cast)
         setrecMovies(recMovie.results)
         setsimMovies(simMovie.results)
-        console.log(movie);
-        console.log(credit.cast);
-        console.log(recMovie.results);
-        console.log(simMovie.results);
     }
 
     var calculatePay = (rating) => {
