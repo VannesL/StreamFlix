@@ -1,13 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Link} from 'react-router-dom';
+import MovieList from './MovieList';
 
 function Movie({match}) {
-
-    const Style={
-        textDecoration: 'none',
-        color: 'wheat'
-    };
     
     const movieid = match.params.id.split('-')[0];
 
@@ -110,8 +106,7 @@ function Movie({match}) {
                 <div className="movList">
                     {recMovies.map(recMovie =>(
                         <div className="mov" key={recMovie.id}>
-                            <img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"+recMovie.poster_path} alt="" />
-                            <Link style={Style} to={`/${recMovie.id}-${recMovie.title.replaceAll(" ", "-")}`}>{recMovie.title}</Link>
+                            <MovieList id={recMovie.id} poster_path={recMovie.poster_path} title={recMovie.title}/>
                         </div>
                     ))}
                 </div>
@@ -121,8 +116,7 @@ function Movie({match}) {
                 <div className="movList">
                     {simMovies.map(simMovie =>(
                         <div className="mov" key={simMovie.id}>
-                            <img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"+simMovie.poster_path} alt="" />
-                            <Link style={Style} to={`/${simMovie.id}-${simMovie.title.replaceAll(" ", "-")}`}>{simMovie.title}</Link>
+                            <MovieList id={simMovie.id} poster_path={simMovie.poster_path} title={simMovie.title}/>
                         </div>
                     ))}
                 </div>

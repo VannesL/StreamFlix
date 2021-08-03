@@ -1,13 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import {Link} from 'react-router-dom';
+import MoviePreview from './MoviePreview';
 
 function Home({match}) {
-
-  const Style={
-    textDecoration: 'none',
-    color: 'wheat'
-  };
 
   console.log(match);
 
@@ -51,40 +46,12 @@ function Home({match}) {
     }
   }
 
-  var calculatePay = (rating) => {
-    if(rating >= 1 && rating < 3){
-        return "3.500"
-    }
-    else if(rating >= 3 && rating < 6){
-        return "8.250"
-    }
-    else if(rating >= 6 && rating < 8){
-        return "16.350"
-    }
-    else{
-        return "21.250"
-    }
-}
-
   return (
     <div>
       <div className="movies">
         {results.map(result =>(
           <div className="movie" key={result.id}>
-            <div className="moviePoster">
-              <img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"+result.poster_path} alt="" />
-            </div>
-            <div className="movieStatus">
-              <div>
-                <Link style={Style} to={`/${result.id}-${result.title.replaceAll(" ", "-")}`}>{result.title}</Link>
-              </div>
-              <div className="price">
-                Rp.{calculatePay(result.vote_average)}
-              </div>
-              <div className="status">
-                Status: Unowned
-              </div>
-            </div>
+            <MoviePreview id={result.id} poster_path={result.poster_path} title={result.title} vote_average={result.vote_average}/>
           </div>
         ))}
       </div>
