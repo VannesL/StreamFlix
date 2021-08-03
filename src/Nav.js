@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Link} from 'react-router-dom'
+import NumberFormat from 'react-number-format';
 
 function Nav() {
 
@@ -8,6 +9,8 @@ function Nav() {
     textDecoration: 'none',
     color: 'wheat'
   };
+
+  var balance = 100000;
 
   return (
     <nav>
@@ -17,7 +20,10 @@ function Nav() {
               <li>Home</li>
             </Link>
         </ul>
-        <div className="wallet">Rp. 100.000</div>
+        <div className="wallet">
+          <div>Rp.</div>
+          <div id="value">{balance}</div>
+        </div>
     </nav>
   );
 }

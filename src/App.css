@@ -226,6 +226,7 @@ nav {
   background: rgb(20, 21, 27);
   color: white;
   font-weight: bold;
+  display: flex;
 }
 
 .status {

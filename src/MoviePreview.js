@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css';
 import {Link} from 'react-router-dom';
+import NumberFormat from 'react-number-format';
 
 function MoviePreview({id, poster_path, title, vote_average}) {
 
@@ -11,18 +12,27 @@ function MoviePreview({id, poster_path, title, vote_average}) {
 
   var calculatePay = (rating) => {
       if(rating >= 1 && rating < 3){
-          return "3.500"
+          return 3500
       }
       else if(rating >= 3 && rating < 6){
-          return "8.250"
+          return 8250
       }
       else if(rating >= 6 && rating < 8){
-          return "16.350"
+          return 16350
       }
       else{
-          return "21.250"
+          return 21250
       }
   }
+
+  var createStatus = (id) => {
+    if(id%2 == 0){
+        return 'Owned'
+    }
+    else{
+      return 'Unowned'
+    }
+}
 
   return (
     <div className="movie">
@@ -34,10 +44,10 @@ function MoviePreview({id, poster_path, title, vote_average}) {
           <Link style={Style} to={`/${id}-${title.replaceAll(" ", "-")}`}>{title}</Link>
         </div>
         <div className="price">
-          Rp.{calculatePay(vote_average)}
+          <NumberFormat value={calculatePay(vote_average)} displayType={'text'} thousandSeparator={true} prefix={'Rp.'} />
         </div>
         <div className="status">
-          Status: Unowned
+          Status: {createStatus(id)}
         </div>
       </div>
     </div>

@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import {Link} from 'react-router-dom';
 import MovieList from './MovieList';
+import NumberFormat from 'react-number-format';
 
 function Movie({match}) {
-    
+
     const movieid = match.params.id.split('-')[0];
 
     useEffect(() => {
-        fetchItems();;
+        fetchItems();
+        
     }, [movieid]);
 
     const [movie, setMovies] = useState({});
@@ -44,18 +45,20 @@ function Movie({match}) {
 
     var calculatePay = (rating) => {
         if(rating >= 1 && rating < 3){
-            return "3.500"
+            return 3500
         }
         else if(rating >= 3 && rating < 6){
-            return "8.250"
+            return 8250
         }
         else if(rating >= 6 && rating < 8){
-            return "16.350"
+            return 16350
         }
         else{
-            return "21.250"
+            return 21250
         }
     }
+
+    const price = calculatePay(movie.vote_average);
 
     return (
         <div>
@@ -74,10 +77,10 @@ function Movie({match}) {
 
                     <div className="movieBuy">
                         <div className="moviePrice">
-                            Rp.{calculatePay(movie.vote_average)}
+                            <NumberFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'Rp.'} />
                         </div>
                         <div className="buyButton">
-                            <Link className="button">Buy Now</Link>
+                            <div className="button">Buy Now</div>
                         </div>
                     </div>
 
