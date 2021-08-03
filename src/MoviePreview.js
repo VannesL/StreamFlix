@@ -25,12 +25,12 @@ function MoviePreview({id, poster_path, title, vote_average}) {
       }
   }
 
-  var createStatus = (id) => {
+  var isOwned = (id) => {
     if(id%2 == 0){
-        return 'Owned'
+      return <div className="statusOwned">Owned</div>
     }
     else{
-      return 'Unowned'
+      return <div className="statusUnowned">Unowned</div>
     }
 }
 
@@ -46,10 +46,8 @@ function MoviePreview({id, poster_path, title, vote_average}) {
         <div className="price">
           <NumberFormat value={calculatePay(vote_average)} displayType={'text'} thousandSeparator={true} prefix={'Rp.'} />
         </div>
-        <div className="status">
-          Status: {createStatus(id)}
-        </div>
       </div>
+      {isOwned(id)}
     </div>
   );
 }

@@ -229,6 +229,32 @@ nav {
   display: flex;
 }
 
-.status {
+.statusOwned {
+  margin-top: 2%;
+  width: auto;
+  border: black;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 25px;
   font-size: medium;
+  background: green;
+  padding-left: 2%;
+  padding-right: 2%;
+  color: white;
+  font-weight: bold;
+}
+
+.statusUnowned {
+  margin-top: 2%;
+  width: auto;
+  border: black;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 25px;
+  font-size: medium;
+  background: grey;
+  padding-left: 2%;
+  padding-right: 2%;
+  color: black;
+  font-weight: bold;
 }
