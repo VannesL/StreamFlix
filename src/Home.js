@@ -3,9 +3,6 @@ import './App.css';
 import MoviePreview from './MoviePreview';
 
 function Home({match}) {
-
-  console.log(match);
-
   // const getPage = () => {
   //   if(match.params.pageNum){
   //     return match.params.pageNum;
@@ -33,12 +30,10 @@ function Home({match}) {
   }
 
   const getnextPage = () => {
-    console.log("here");
     setpageNums(pageNum+1);
   }
 
   const getprevPage = () => {
-    console.log("here");
     if(pageNum > 1){
       setpageNums(pageNum-1);
     }
