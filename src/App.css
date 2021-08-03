@@ -1,38 +1,233 @@
 .App {
+  background: rgb(20, 21, 27);
+  color: wheat;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(70, 97, 105);
+  color: wheat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.links {
+  width: 50vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.castList {
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+}
+
+.actor {
+  width: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  font-weight: bold;
+  font-size: smaller;
+  margin-right: 4vh;
+}
+
+.actorDetails {
+  margin-top: auto;
+  margin-bottom: 2vh;
+}
+
+.actor img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  background-size: cover;
+  margin-bottom: 1vh;
+}
+
+.movieDetail {
+  padding: 3%;
+  display: flex;
+  justify-content: space-around;
+  background: rgb(20, 21, 27);
+}
+
+.moviePoster {
+  width: 35%;
+  height: auto;
+}
+
+.movieInfo {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  width: 60%;
+  text-align: left;
+  font-weight: bolder;
+}
+
+.movieStatus {
+  text-align: center;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.movieDesc {
+  text-align: left;
+}
+
+.movieBuy {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: xx-large;
+}
+
+.moviePrice {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+.buyButton {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: bolder;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.rating {
+  width: 13%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.coloring {
+  color: white;
+}
+
+.movList {
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  margin-left: 4%;
+  margin-right: 4%;
+  background-color: rgb(70, 97, 105);
+  font-size: small;
+}
+
+.movList img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  background-size: cover;
+  margin-bottom: 1vh;
+}
+
+.mov {
+  padding: 1%;
+  font-weight: bold;
+  margin-right: 3vh;
+  margin-bottom: 1vh;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.movies img {
+  display: flex;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-size: cover;
+  margin-bottom: 1vh;
+}
+
+.movie {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 20%;
+  flex-direction: column;
+  align-items: center;
+  margin: 2%;
+}
+
+.movieInfo {
+  text-align: center;
+}
+
+.button {
+  background-color: rgb(70, 97, 105);
+  border: none;
+  color: wheat;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(40, 55, 59);
+}
+
+.navButton {
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding-bottom: 2%;
+}
+
+.prevnextButton {
+  height: 5%;
+  width: auto;
+}
+
+.price {
+  margin-top: 2%;
+  font-weight: medium;
+  font-size: medium;
+  color: white;
+}
+
+.wallet {
+  padding: 0.3%;
+  border: black;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 25px;
+  background: rgb(20, 21, 27);
+  color: white;
+  font-weight: bold;
+}
+
+.status {
+  font-size: medium;
 }
